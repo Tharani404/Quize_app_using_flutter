@@ -38,7 +38,9 @@ class QuizeHome extends StatelessWidget {
 
           const SizedBox(height: 30),
           OutlinedButton.icon(
-            onPressed: () {}, 
+            onPressed: () {
+              
+            }, 
 
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
