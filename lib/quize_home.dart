@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuizeHome extends StatelessWidget {
   const QuizeHome(this.startQuiz, {super.key});
@@ -31,9 +32,9 @@ class QuizeHome extends StatelessWidget {
             height: 30,
           ),
 
-          const Text('Learn Flutter the fun way!',
-            style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
+          Text('Learn Flutter the fun way!',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(255, 219, 164, 229),
               fontSize: 20,
             ),
           ),
@@ -43,7 +44,7 @@ class QuizeHome extends StatelessWidget {
             onPressed: startQuiz, 
 
             style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
+              foregroundColor: const Color.fromARGB(255, 241, 212, 246),
             ),
             icon: const Icon(Icons.arrow_right_alt),
             label: const Text('Start Quiz'),
