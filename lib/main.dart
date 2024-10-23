@@ -3,6 +3,7 @@ import 'package:quize_app/quize.dart';
 
 
 void main(){
+  
   runApp(
     const Quize()
   );
