@@ -23,22 +23,22 @@ class _QuizeState extends State<Quize> { // "_" in private
   //   super.initState(); 
   // }
 
-  List<String> selectedAnswers = [];
+  List<String> _selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   //method Defining a function
   void switchScreen() {
     setState(() {
-      selectedAnswers = [];
+      _selectedAnswers = [];
       activeScreen = 'questions-screen';
     });
   }
 
 
   void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+    _selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length) {
+    if (_selectedAnswers.length == questions.length) {
       setState(() {
         // selectedAnswers = [];
         activeScreen = 'results-screen';
@@ -62,7 +62,7 @@ class _QuizeState extends State<Quize> { // "_" in private
 
     if (activeScreen == 'results-screen') {
       screenWidget = ResultsScreen(
-        chosenAnswers: selectedAnswers,
+        chosenAnswers: _selectedAnswers,
       );
     }
 
