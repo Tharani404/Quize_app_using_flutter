@@ -54,7 +54,8 @@ class ResultsScreen extends StatelessWidget {
 
                   return ListTile(
                     title: Text(
-                      data['question'] as String,
+                      '${index + 1}. ${data['question'] as String}',
+                      // data['question'] as String,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: isCorrect ? Colors.green : const Color.fromARGB(255, 255, 53, 242),
@@ -74,14 +75,33 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            TextButton(
+            OutlinedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Quize()),
+                MaterialPageRoute(builder: (context) => const Quize()),
                 );
               },
-              child: const Text('Restart Quiz!'),
+
+            icon: const Icon(
+              Icons.restart_alt,  // Icon for restart
+              color: Colors.white, // Color of the icon
+            ),
+
+              label: const Text('Restart Quiz!',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+
+              style: OutlinedButton.styleFrom(
+              side: const BorderSide(color: Colors.white),  // Border color
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15), // Button padding
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10), // Rounded corners
+                ),
+              ),
             ),
           ],
         ),
